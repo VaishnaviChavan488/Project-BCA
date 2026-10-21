@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CoffeeHouse - Online Coffee Shop</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <span class="material-symbols-outlined">coffee</span>
+        Coffee<span class="gold">House</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#cart" class="cart-link">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        Cart (<span id="count">0</span>)
+    </a>
+</header>
+<section class="hero" id="home">
+    <p>GOOD COFFEE • GOOD MOOD</p>
+
+    <h1>
+        Fresh Coffee<br>
+        <span>For a Better Day</span>
+    </h1>
+
+    <p>
+        Discover the rich taste of freshly brewed coffee,
+        made with love and the finest beans.
+    </p>
+
+    <button onclick="goTo('menu')">Explore Menu →</button>
+</section>
+
+<section class="menu" id="menu">
+    <p>OUR MENU</p>
+    <h2>Popular Coffee</h2>
+    <p class="subtitle">Choose your favourite coffee!</p>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=600&q=80" alt="Espresso">
+            <div class="info">
+                <h3>Espresso</h3>
+                <p>Strong and bold, a true classic.</p>
+                <div class="price">
+                    <span class="material-symbols-outlined rupee-icon">currency_rupee</span>120
+                </div>
+                <button onclick="addToCart('Espresso',120)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" alt="Cappuccino">
+            <div class="info">
+                <h3>Cappuccino</h3>
+                <p>Smooth, creamy and delicious.</p>
+                <div class="price">
+                    <span class="material-symbols-outlined rupee-icon">currency_rupee</span>160
+                </div>
+                <button onclick="addToCart('Cappuccino',160)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" alt="Iced Coffee">
+            <div class="info">
+                <h3>Iced Coffee</h3>
+                <p>Cool, refreshing and energizing.</p>
+                <div class="price">
+                    <span class="material-symbols-outlined rupee-icon">currency_rupee</span>140
+                </div>
+                <button onclick="addToCart('Iced Coffee',140)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Latte">
+            <div class="info">
+                <h3>Latte</h3>
+                <p>Rich espresso with steamed milk.</p>
+                <div class="price">
+                    <span class="material-symbols-outlined rupee-icon">currency_rupee</span>160
+                </div>
+                <button onclick="addToCart('Latte',160)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80" alt="Mocha">
+            <div class="info">
+                <h3>Mocha</h3>
+                <p>Chocolate flavour with rich coffee.</p>
+                <div class="price">
+                    <span class="material-symbols-outlined rupee-icon">currency_rupee</span>180
+                </div>
+                <button onclick="addToCart('Mocha',180)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Black Coffee">
+            <div class="info">
+                <h3>Black Coffee</h3>
+                <p>Simple, strong and refreshing.</p>
+                <div class="price">
+                    <span class="material-symbols-outlined rupee-icon">currency_rupee</span>100
+                </div>
+                <button onclick="addToCart('Black Coffee',100)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Caramel Coffee">
+            <div class="info">
+                <h3>Caramel Coffee</h3>
+                <p>Smooth coffee with sweet caramel.</p>
+                <div class="price">
+                    <span class="material-symbols-outlined rupee-icon">currency_rupee</span>190
+                </div>
+                <button onclick="addToCart('Caramel Coffee',190)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=600&q=80" alt="Cold Brew">
+            <div class="info">
+                <h3>Cold Brew</h3>
+                <p>Chilled coffee for a refreshing break.</p>
+                <div class="price">
+                    <span class="material-symbols-outlined rupee-icon">currency_rupee</span>170
+                </div>
+                <button onclick="addToCart('Cold Brew',170)">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="cart-section" id="cart">
+    <h2>
+        <span class="material-symbols-outlined">shopping_cart</span>
+        Your Shopping Cart
+    </h2>
+
+    <ul id="cartItems">
+        <li>Your cart is empty.</li>
+    </ul>
+
+    <p id="total">
+        Total:
+        <span class="material-symbols-outlined rupee-icon">currency_rupee</span>0
+    </p>
+
+    <button onclick="clearCart()">Clear Cart</button>
+
+    <button onclick="checkout()">
+        Order Now
+        <span class="material-symbols-outlined">check_circle</span>
+    </button>
+
+    <p id="message" role="status" aria-live="polite"></p>
+</section>
+<section class="about-section" id="about">
+    <h2>
+        <span class="material-symbols-outlined">coffee</span>
+        About CoffeeHouse
+    </h2>
+
+    <p>
+        We serve delicious coffee to make your day happier.
+        Enjoy fresh taste, quality coffee and warm moments!
+    </p>
+</section>
+<footer id="contact">
+    <h3>
+        <span class="material-symbols-outlined">coffee</span>
+        CoffeeHouse
+    </h3>
+
+    <p>Fresh Coffee, Happy Moments!</p>
+
+    <p>
+        Contact:
+        <a href="tel:9591936088">7462994719</a>
+    </p>
+
+    <p>© 2026 CoffeeHouse. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
